@@ -1,0 +1,7 @@
+<launch>
+	<master auto="start"/>
+    <node name="benders_citations" pkg="benders_citations" type="benders_citations_node">
+    	<param name = "output_citations_topic" 	type = "str"	value = "benders_citations_topic"/>
+    	<param name = "input_citations_topic" 	type = "str"	value = "input_citations_number"/>
+    </node>
+</launch>
