@@ -8,7 +8,7 @@ project(benders_citations)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp std_msgs
+  roscpp std_msgs message_generation message_runtime
 )
 
 ## System dependencies are found with CMake's conventions
@@ -52,11 +52,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+ add_service_files(
+   FILES
+   GetCitations.srv
+ )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -66,10 +65,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   roscpp std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   roscpp std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -141,6 +140,9 @@ include_directories(
 add_executable(benders_citations_node src/citations_publisher.cpp)
 target_link_libraries(benders_citations_node ${catkin_LIBRARIES})
 
+#Server
+add_executable(citations_server src/citations_server.cpp)
+target_link_libraries(citations_server ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
