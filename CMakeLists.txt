@@ -147,6 +147,11 @@ target_link_libraries(citations_server ${catkin_LIBRARIES})
 #Client
 add_executable(citations_client src/citations_client.cpp)
 target_link_libraries(citations_client ${catkin_LIBRARIES})
+
+#AutoClient
+add_executable(auto_citations_client src/auto_citations_client.cpp)
+target_link_libraries(auto_citations_client ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
