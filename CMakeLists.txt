@@ -143,6 +143,10 @@ target_link_libraries(benders_citations_node ${catkin_LIBRARIES})
 #Server
 add_executable(citations_server src/citations_server.cpp)
 target_link_libraries(citations_server ${catkin_LIBRARIES})
+
+#Client
+add_executable(citations_client src/citations_client.cpp)
+target_link_libraries(citations_client ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
