@@ -137,6 +137,7 @@ include_directories(
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+
 add_executable(benders_citations_node src/citations_publisher.cpp)
 target_link_libraries(benders_citations_node ${catkin_LIBRARIES})
 
@@ -147,6 +148,7 @@ target_link_libraries(citations_server ${catkin_LIBRARIES})
 #Client
 add_executable(citations_client src/citations_client.cpp)
 target_link_libraries(citations_client ${catkin_LIBRARIES})
+add_dependencies(citations_client ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 #AutoClient
 add_executable(auto_citations_client src/auto_citations_client.cpp)
